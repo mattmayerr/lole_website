@@ -1,0 +1,338 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@keyframes colorWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header, footer {
+  background: linear-gradient(-45deg, #010247, #570202, #000000);
+  background-size: 400% 400%;
+  animation: colorWave 10s ease infinite;
+  color: white;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: url('../assets/images/barber-banner.jpg') center/cover no-repeat;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e91e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.services {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.service-card {
+  background: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #e91e63;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.booking-form {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-message {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.gallery {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+.lightbox-content {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: white;
+  padding: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox .close:hover {
+  color: #e91e63;
+}
+
+.lightbox-caption {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: #e91e63;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 480px) {
+  .lightbox-caption {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    transition: background-color 0.2s ease;
+    top: auto;
+    bottom: 20px;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  footer {
+    padding: 15px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+.instagram {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.instagram h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.instagram-feed iframe {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

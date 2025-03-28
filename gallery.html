@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Lole Finau</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <a href="https://www.instagram.com/lo.faded_/?hl=en" target="_blank">
+            <img src="assets\images\Lole PFP.jpg" alt="Barber Profile" class="profile-pic">
+          </a>
+          <h1>Lole Finau</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Book</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="assets\images\haricut1.jpg" alt="Clean fade haircut" class="lightbox-trigger" data-caption="Fade">
+      <img src="assets\images\haircut2.jpg" alt="Beard lineup" class="lightbox-trigger" data-caption="Bald Fade">
+      <img src="assets\images\haircut3.jpg" alt="Taper fade" class="lightbox-trigger" data-caption="Marble Fade">
+      <img src="assets\images\haircut4.jpg" alt="Haircut and beard combo" class="lightbox-trigger" data-caption="Buzz Cut">
+      <img src="assets\images\haircut5.jpg" alt="Crisp edge-up" class="lightbox-trigger" data-caption="Low Taper Fade">
+      <img src="assets\images\haircut6.jpg" alt="Detailed fade design" class="lightbox-trigger" data-caption="Drop Fade">
+    </div>
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2025 Lole Finau. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+  </div>
+  
+  <script src="js/lightbox.js"></script>
+</body>
+</html>

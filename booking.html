@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book an Appointment | Lole Finau</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="https://www.instagram.com/lo.faded_/?hl=en" target="_blank">
+        <img src="assets\images\Lole PFP.jpg" alt="Barber Profile" class="profile-pic">
+      </a>
+      <h1>Lole Finau</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="booking.html">Book</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="booking-form">
+    <h2>Book Your Appointment</h2>
+    <form method="POST">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="Full Name" required>
+      
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="Email" required>
+      
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="Phone Number" required>
+      
+        <label for="service">Select Service</label>
+        <select id="service" name="Service" required>
+          <option value="">-- Choose --</option>
+          <option value="Haircut">Haircut</option>
+          <option value="Beard Trim">Beard Trim</option>
+          <option value="Line-Up">Line-Up</option>
+          <option value="Haircut + Beard">Haircut + Beard</option>
+          <option value="Hot Towel / Razor Finish">Hot Towel / Razor Finish</option>
+        </select>
+      
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" name="Preferred Date" required>
+      
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" name="Preferred Time" required>
+      
+        <button type="submit" class="btn">Submit Request</button>
+
+      </form>
+      <p id="form-message" class="form-message" style="display: none;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lole Finau. All rights reserved.</p>
+  </footer>
+  <script>
+    const form = document.querySelector("form");
+    const msg = document.getElementById("form-message");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const data = new FormData(form);
+      fetch("https://formspree.io/f/movednee", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        msg.style.display = "block";
+  
+        if (response.ok) {
+          msg.textContent = "Thanks! Your appointment request has been sent.";
+          msg.className = "form-message success";
+          form.reset();
+        } else {
+          msg.textContent = "Oops! Something went wrong. Please try again.";
+          msg.className = "form-message error";
+        }
+      }).catch(() => {
+        msg.style.display = "block";
+        msg.textContent = "Network error. Please check your connection.";
+        msg.className = "form-message error";
+      });
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
